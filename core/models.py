@@ -1,3 +1,4 @@
+from email.headerregistry import Address
 from django.db import models
 from datetime import datetime
 
@@ -84,4 +85,41 @@ class Product(models.Model):
         verbose_name = 'Producto'
         verbose_name_plural = 'Productos'
         db_table = 'product'
+        ordering = ['id']
+
+class Store(models.Model):
+    name = models.CharField(
+        max_length=200,
+        verbose_name="Nome")
+    phone = models.CharField(
+        max_length=200,
+        verbose_name="Telefone")
+    email = models.EmailField(
+        max_length=200,
+        verbose_name="Email")
+    description = models.TextField(
+        max_length=500,
+        verbose_name="Descricao")
+    address = models.CharField(
+        max_length=200,
+        verbose_name="Endereco")
+    lat = models.CharField(verbose_name='Latitude', max_length=50)
+    log = models.CharField(verbose_name='Longitude', max_length=50)
+    image = models.ImageField(
+        upload_to='store/%Y/%m/%d',
+        verbose_name="Imagem"
+    )
+    open = models.TimeField(verbose_name="Abertura")
+    close = models.TimeField(verbose_name="Fecho")
+    created_at = models.DateTimeField(
+        auto_now_add=True
+    )
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = 'Loja'
+        verbose_name_plural = 'Lojas'
+        db_table = 'store'
         ordering = ['id']

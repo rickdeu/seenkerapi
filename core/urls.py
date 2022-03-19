@@ -7,6 +7,7 @@ router.register(r'category-list', views.CategoryViewSet)
 router.register(r'product-list', views.ProductViewSet)
 router.register(r'product-list-emphasis', views.ProductIsEmphasitViewSet)
 router.register(r'banner-list', views.BannerViewSet)
+router.register(r'store-list', views.StoreViewSet)
 
 
 app_name = 'core'

@@ -67,6 +67,10 @@ class BannerViewSet(viewsets.ReadOnlyModelViewSet):
     queryset=Banner.objects.filter(isActive=True)
     serializer_class=BannerSerializer
     #permission_classes=[permissions.IsAuthenticated]
+class StoreViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset=Store.objects.all()
+    serializer_class=StoreSerializer
+    #permission_classes=[permissions.IsAuthenticated]
 
 
 @api_view(['GET'])

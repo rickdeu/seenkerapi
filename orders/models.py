@@ -8,7 +8,7 @@ from django.utils.translation import gettext_lazy as _
 class  Order(models.Model):
     first_name = models.CharField(verbose_name="Nome", max_length=50)
     last_name = models.CharField(verbose_name="Sobrenome",max_length=50)
-    email = models.EmailField(verbose_name="Email", unique=True)
+    email = models.EmailField(verbose_name="Email")
     address = models.CharField(verbose_name="Endereco", max_length=250)
     postal_code = models.CharField(verbose_name="Codigo Postal", max_length=20)
     city = models.CharField(verbose_name="Cidade", max_length=100)

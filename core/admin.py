@@ -26,3 +26,9 @@ class ProductAdmin(admin.ModelAdmin):
 class BannerAdmin(admin.ModelAdmin):
     list_display = ('name', 'image', 'isActive', 'description' )
 
+
+@admin.register(Store)
+class StoreAdmin(admin.ModelAdmin):
+    list_display = ('name', 'phone', 'email', 'lat', 'log', 'open',  'close' )
+    save_as = True
+
