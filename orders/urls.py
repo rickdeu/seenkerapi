@@ -1,4 +1,4 @@
-from turtle import update
+#from turtle import update
 from rest_framework.routers import DefaultRouter
 from orders import views
 from django.urls import path, include
